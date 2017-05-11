@@ -311,7 +311,7 @@ $(document).ready(function()
 		mode = getParameterByName("mode");
 
 		if (mode === "receiving"){
-			$("#back-to-mygifts").hide();
+			$("#back-to-edit").hide();
 		}
 
 		//console.log("giftID " + giftID )
