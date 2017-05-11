@@ -1,2 +1,2 @@
-# regaler.github.com
-HCI project: FastGift
+# FastGift
+An awesome project !
