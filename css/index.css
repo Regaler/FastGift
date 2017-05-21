@@ -17,9 +17,16 @@
 {
 	text-align: center;
 }
-#birthdayPreview
-{
+
+#navigation_bar a {
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
 }
+
+button {
+	font-family: 'Noto Sans', sans-serif;
+}
+
 #anniversaryPreview
 {
 	display: none;
@@ -37,4 +44,19 @@
 
 #bigbang-img:hover {
 	cursor: pointer;
+}
+
+#bigbang-img {
+	border: 1px;
+	border-color: #e1e5ed;
+	border-style: solid;
+}
+
+.unavailable:hover {
+	cursor: pointer;
+}
+
+
+.imgpreview:hover, .btnwrapper:hover {
+  cursor: pointer;
 }

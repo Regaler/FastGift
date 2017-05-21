@@ -1,3 +1,22 @@
 #gift-template {
 	display:none;
 }
+
+#navigation_bar a {
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
+}
+
+button, h2, h3, input, tt, span {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.pagination {
+	width: 50%;
+	margin-left: 40%;
+}
+
+#giftname{
+    white-space: nowrap;
+  overflow: hidden;
+}

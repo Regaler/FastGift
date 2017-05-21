@@ -44,25 +44,50 @@
 </head>
 <body>
   <div id="navigation_bar" class="row">
-      <a href="../index.html" class="col-xs-4">
-        <img src="../images/logo.png" style="width:85px;height:49px;">
-      </a>
-      <div class="col-xs-4">
-        <center class="nav-option">
-          <a style="margin-right : 10px" href="../index.html">Home</a>
-          <a style="margin-left : 10px" href="../mygifts.html">My Gifts</a>  
-        </center>
+      
+      <div class="dropdown1 col-xs-3" style="display: inline-block">
+        <div style="display: inline-block; margin-top: -12px; height: 31px">
+          <img id="dropdown-icon" class="dropdown-toggle" data-toggle="dropdown" src="../images/dropdown.png" style="cursor: pointer;">
+          <ul class="dropdown-menu">
+            <li><a href="../index.html">Go to Home</a></li>
+            <li><a href="../mygifts.html">Go to My Gifts</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div>
         
+        
+        <div id="gift-name-edit"  style="display: inline-block; max-width: 80%;    margin-top: 5px;margin-left: 10px" contenteditable="true">
+         
+        </div>
       </div>
-      <div class="col-xs-4 text-right">
-        <div class="nav-option" style="margin-right: 10px">
-          <a href="">Logout</a>  
+      <div class="col-xs-3" style="text-align:left">
+        <button id="panel_prev" type="button" style="margin-top:7px;display: none" class="btn btn-info">Prev</button>  
+      </div>
+      <div class="col-xs-3" style="text-align: center">
+        <div id="preview-btn" style="margin-right: 9px;">
+          <i style="display: block;margin-bottom: -8px;line-height: 19px;font-size: 35px" class="material-icons">play_arrow</i>
+          <span style="font-size:18px">Preview</span>  
+        </div>
+       
+
+        <div id="save-to-cloud-btn" style="margin-left: 9px;">
+          <i style="display: block;margin-bottom: -8px;" class="material-icons">cloud_upload</i>
+          <span style="font-size:18px">Save</span>  
         </div>
         
       </div>
-    </div>
+      <div class="col-xs-3" style="text-align: right">
+        <button id="panel_next" type="button" style="margin-top:7px;display: none" class="btn btn-info">Next</button>  
+      </div>
+  </div>
   <div class="container-fluid">
     <div id="left_toolbar" class="col-xs-3" >
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0"
+        aria-valuemin="0" aria-valuemax="100" style="width:0%">
+         
+        </div>
+      </div>
       <div id="slide1" class="slide">
       <img src="../images/slide1.png" style="width: 100%; height:100%;">
       </div>
@@ -80,11 +105,11 @@
       <div id="panel1" class="gift-panel">
         <!-- HEADER PANEL 1 -->
         <div id="panel1_header" class="panel_header row">
-          <i id="music" class="material-icons col-xs-3">music_note</i>
+          <div class="col-xs-3"></div>
           
           <div class="col-xs-9 header_mid">
             <div><h1>HAPPY BIRTHDAY</h1></div>
-            <div id="wrapper_input1">
+            <div id="wrapper_input1" class="wrapper_input">
               <h2 id="input1-outer" style="margin-top: 10px;">+Text</h2>
               <input id="input1" style="display: none" type="text" name="fname">
             </div>
@@ -100,14 +125,14 @@
         <!-- FOOTER PANEL1 -->
         <div id="panel1_footer" class="panel_footer row">
           <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
-            <div id="wrapper_input2">
+            <div id="wrapper_input2" class="wrapper_input">
              
               <h2 id="input2-outer" style="margin-top: 10px;">+Text</h2>
               <input id="input2" style="display: none" type="text" name="fname">
             </div>
           </div>
           <div class="col-xs-3" style="text-align: right">
-            <button id="panel1_next" type="button" class="btn btn-info">Next</button>  
+            <!-- <button id="panel1_next" type="button" class="btn btn-info">Next</button>   -->
           </div>
         </div>
       </div>
@@ -116,23 +141,24 @@
       <div id="panel2" class="gift-panel">
         <!-- HEADER PANEL 2 -->
         <div id="panel2_header" class="panel_header">
-          <i id="music" class="material-icons">music_note</i>
+          <!-- <i id="music" class="material-icons">music_note</i> -->
           <div class="clear"></div>
         </div>
 
         <!-- BODY PANEL 2 -->
         <div id="panel2_body" class="panel_body">
           <img id="balloon-img" src="../images/real_balloon2.png">
-          <div id="wrapper_input5">
+          <div id="wrapper_input5" class="wrapper_input">
              
               <h2 id="input5-outer" style="margin-top: 10px;">+Text</h2>
               <textarea id="input5" style="display: none" ></textarea>
             </div>
           <div id="wrapper_input6">
-            <h2 id="input6-outer" style="margin-top: 3px;margin-left: 3px;">+Image</h2>
-            <img style="display: none; width: 100%; height: auto" ></img>
+            <img id="input6_img" src="../images/add_image.png" style="width: 50%; height: auto" ></img>
+            <!-- <h2 id="input6-outer" style="margin-top: 3px;margin-left: 3px;">+Image</h2> -->
+            <img id="output6" style="display: none; width: 100%; height: auto" ></img>
           </div>
-          <div id="wrapper_input7">
+          <div id="wrapper_input7" class="wrapper_input">
              
               <h2 id="input7-outer" style="margin-top: 10px;">+Text</h2>
               <textarea id="input7" style="display: none" ></textarea>
@@ -144,7 +170,7 @@
         <!-- FOOTER PANEL 2 -->
         <div id="panel2_footer" class="panel_footer row">
           <div class="col-xs-3" style="text-align: left">
-            <button id="panel2_prev" type="button" class="btn btn-info">Prev</button>  
+            <!-- <button id="panel2_prev" type="button" class="btn btn-info">Prev</button>   -->
           </div>
           <div class="col-xs-6" style="text-align:center">
             <div id="wrapper_input8">
@@ -154,7 +180,7 @@
             </div>
           </div>
           <div class="col-xs-3" style="text-align: right">
-            <button id="panel2_next" type="button" class="btn btn-info">Next</button>  
+            <!-- <button id="panel2_next" type="button" class="btn btn-info">Next</button>   -->
           </div>
         </div>
       </div>
@@ -163,28 +189,32 @@
       <!-- PANEL 3 -->
       <div id="panel3" class="gift-panel">
         <!-- HEADER PANEL 3 -->
-        <div id="panel3_header" class="panel_header">    
-          <i id="music" class="material-icons">music_note</i>    
-        </div>
-
+        
         <!-- BODY PANEL 3 -->
         <div id="panel3_body" class="panel_body">
           <img id="gift_card_panel3" src="../images/card.png">
           <div id="wrapper_input9">
-            <h1>+Video</h1>
+            <!-- <h1>+Video</h1> -->
+            <img id="input9_img" src="../images/add_video.png">
+            <video style="display: none" width="100%" controls autoplay="">
+              <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" >
+              <!-- src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"  -->
+              <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </div>
 
         <!-- FOOTER PANEL 3 -->
         <div id="panel3_footer" class="panel_footer row">
           <div class="col-xs-3" style="text-align: left">
-            <button id="panel3_prev" type="button" class="btn btn-info">Prev</button>  
+            <!-- <button id="panel3_prev" type="button" class="btn btn-info">Prev</button>   -->
           </div>
           <div class="col-xs-6" style="text-align: left">
             
           </div>
           <div class="col-xs-3" style="text-align: right">
-            <button id="panel3_save" type="button" class="btn btn-info">Save</button>  
+            <!-- <button id="panel3_save" type="button" class="btn btn-success">Save</button>   -->
           </div>
         </div>
       </div>
@@ -201,8 +231,39 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h2 class="modal-title" style="text-align: center;">Input image url</h2>
               <p style="font-size: 20px; text-align: center">Please input your image's url here</p>
+              <p style="font-size: 20px; text-align: center">(Example: https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg)</p>
+              
               <center>
                 <input id="#input6" type="text" style="width: 75%" name="input6-img-url" placeholder="Your image's url"><br>
+              </center>
+              <center style="margin-top: 25px; margin-bottom: 20px;">
+                <button  type="button" class="btn btn-danger cancel" data-dismiss="modal" style="width: 90px; margin-right:10px;">Cancel</button>
+                <button  type="button" class="btn btn-info done" data-dismiss="modal" style="width:  90px; margin-left:10px;">Done</button>  
+              </center>
+              
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+
+
+      <!-- Modal Input img-->
+      
+      <div class="modal fade" id="video-input-modal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title" style="text-align: center;">Input Video url</h2>
+              <p style="font-size: 20px; text-align: center">Please input your video's url here</p>
+              <p style="font-size: 20px; text-align: center">(example: http://clips.vorwaerts-gmbh.de/VfE_html5.mp4)</p>
+              <center>
+                <input id="#input9" type="text" style="width: 75%" name="input6-img-url" placeholder="Your video's url"><br>
               </center>
               <center style="margin-top: 25px; margin-bottom: 20px;">
                 <button  type="button" class="btn btn-danger cancel" data-dismiss="modal" style="width: 90px; margin-right:10px;">Cancel</button>
