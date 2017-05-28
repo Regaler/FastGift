@@ -15,7 +15,7 @@ $( document ).ready(function() {
       if(receiver == "") receiver = "somebody";
       var timeStamp = -childSnapshot['priority'];
       gift.attr('data-sort', timeStamp);
-      console.log(timeStamp);
+      //console.log(timeStamp);
       var giftType = childSnapshot.templateName;
       // gift.find('.gift-name').html('Gift to ' + receiver);
       gift.find('.gift-name').html(childSnapshot.giftTitle);
@@ -50,9 +50,9 @@ $( document ).ready(function() {
 
       var isCompleted = checkPercentCompleted(gift);
       if (isCompleted){
-        gift.data("gift_status", "Completed")
+        gift.attr("gift_status", "Completed")
       } else {
-        gift.data("gift_status", "Incompleted")
+        gift.attr("gift_status", "Incompleted")
       }
       if (gift.attr('id') == '-KlDwgayM2KPjVEVUYxk') {
         continue;
@@ -75,7 +75,6 @@ $( document ).ready(function() {
       var u = $(this);
       u.remove();
       $(u).appendTo('#gift-manager');
-      console.log(u.attr('data-sort'));
     });
     
     $('#gift-manager .one-gift').hide();
@@ -188,10 +187,12 @@ $( document ).ready(function() {
         var _url = "Preview/" + selectedGift.dataset.gifttype + ".html?mode=receiving&giftid=" + selectedGift.id;
         $("#gift-copylink-modal input").val(window.location.href.split("mygifts.html")[0] + _url);
         
-        var giftStatus = $(this).closest(".one-gift").data("gift_status");
+        var giftStatus = $(this).closest(".one-gift").attr("gift_status");
+        console.log($(this).closest(".one-gift"));
         if (giftStatus == "Completed") {
           $("#gift-copylink-modal").modal("show");
         } else {
+          console.log(giftStatus);
           $("#gift-copylink-modal-incompleted").modal("show");
         }
   });
