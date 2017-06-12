@@ -51,8 +51,8 @@ $(document).ready(function()
 		
 		$("#wrapper_input9").css({ 'background-color':"rgba(255, 0, 0, 0)" })
 		.css({"border":"none"})
-		$("#wrapper_input9 source").attr('src', video1_url);
-		$("#wrapper_input9 video").show();
+		$("#wrapper_input9 #input9_video").attr('src', video1_url);
+		$("#wrapper_input9 #input9_video").show();
 		$("#wrapper_input9 img").hide();
 	})
 
@@ -386,6 +386,7 @@ $(document).ready(function()
 	}
 
 	function checkVideoURL(url) {
+		return true;
 	    return(url.match(/\.(mp4|webm|webm)$/) != null);
 	}
 
@@ -495,8 +496,8 @@ $(document).ready(function()
 				if (inputType === "video") {
 					$("#wrapper_input9").css({ 'background-color':"rgba(255, 0, 0, 0)" })
 					.css({"border":"none"})
-					$("#wrapper_input9 source").attr('src', value);
-					$("#wrapper_input9 video").show();
+					$("#wrapper_input9 #input9_video").attr('src', value);
+					$("#wrapper_input9 #input9_video").show();
 					$("#wrapper_input9 img").hide();
 					return;
 				} else if (inputType === "image"){
@@ -536,8 +537,8 @@ $(document).ready(function()
 				$("#video-input-modal input").val(value);
 				$("#wrapper_input9").css({ 'background-color':"rgba(255, 0, 0, 0)" })
 				.css({"border":"none"})
-				$("#wrapper_input9 source").attr('src', value);
-				$("#wrapper_input9 video").show();
+				$("#wrapper_input9 #input9_video").attr('src', value);
+				$("#wrapper_input9 #input9_video").show();
 				$("#wrapper_input9 img").hide();
 			}
 		}else if (inputType === "image"){
